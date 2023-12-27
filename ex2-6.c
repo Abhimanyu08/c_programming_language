@@ -6,12 +6,12 @@ unsigned setbits(unsigned, int, int, unsigned);
 
 
 main(){ 
-    unsigned x = 73;
-    unsigned y = 180;
+    unsigned x = 190;
+    unsigned y = 90;
 
     unsigned z;
 
-    z = setbits(x, 4, 3, y);
+    z = setbits(x, 3, 2, y);
 
     printf("%hhu\n", z);
 }
