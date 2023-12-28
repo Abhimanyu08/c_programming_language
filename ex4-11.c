@@ -68,8 +68,6 @@ main() {
     
 }
 
-int getch(void); 
-void ungetch(int);
 
 int getop(char s[]) {
     //this function writes operand or operator into s. this function needs to handle the input like 1234*+ gracefully. we can't tell we have reached the end of number until we have read till *
@@ -77,8 +75,15 @@ int getop(char s[]) {
     //there can be tons of consecutive spaces the start of. we need to ignore those
     
     int i,c;
-    while ((s[0] = c = getch()) == ' ' ||  c == '\t')
-	;
+    static int extra = 0; 
+    if (extra != 0) {
+	c = extra;
+	extra = 0;
+    } else 
+	c = getchar();
+    while ((s[0] = c) == ' ' ||  c == '\t')
+	c = getchar();
+    
 
     s[1] = '\0';
 
@@ -88,39 +93,31 @@ int getop(char s[]) {
 
     i = 0;
     if (isdigit(c)) {
-	while (isdigit(s[++i] = c = getch()))
-	    ;
+	while (isdigit(s[i++] = c)) 
+
+	    c = getchar();
+
     }
 
     if (c == '.')
-	while (isdigit(s[++i] = c = getch()))
-	    ;
+	while (isdigit(s[++i] = c))
+	    c = getchar();
 
     s[i] = '\0';
     if (c != EOF) 
-	ungetch(c);
+	extra = c;
 
     return NUMBER;
 
 }
 
-int extra = 0;
 
 
-int getch(void) {
+int getch(int extra) {
     int ch;
 
     ch = (extra != 0) ? extra: getchar();
-    extra = 0;
     return ch;
 }
-
-
-void ungetch(int c) {
-    
-    extra = c;
-
-}
-
 
 
