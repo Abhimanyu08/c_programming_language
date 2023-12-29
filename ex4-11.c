@@ -112,12 +112,3 @@ int getop(char s[]) {
 }
 
 
-
-int getch(int extra) {
-    int ch;
-
-    ch = (extra != 0) ? extra: getchar();
-    return ch;
-}
-
-
