@@ -1,6 +1,4 @@
-
-
-
+#include "alloc.h"
 #define SIZE 1000
 static char allocbuffer[SIZE];
 
