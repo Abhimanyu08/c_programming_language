@@ -13,7 +13,7 @@ void strcat(char* s,  char* t){
 
 main() {
     
-    char s[20] = "hello";
+    char s[] = "hello";
     char t[] = "world";
 
     strcat(s,t);

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include "alloc.h"
 #include "strcpy.h"
 #define MAXLEN 1000
