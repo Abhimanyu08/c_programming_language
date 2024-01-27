@@ -1,0 +1,1 @@
+char* allocn(int n);
