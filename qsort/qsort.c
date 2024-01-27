@@ -1,6 +1,5 @@
 #include "string.h"
 #include "getlines.h"
-#include <stdio.h>
 
 
 #define NUMLINES 1000
