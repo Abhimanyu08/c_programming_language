@@ -9,7 +9,7 @@ int getword(char* word) {
     int c;
     char* w = word;
 
-    while ((c = getchar()) != EOF && (isspace(c) || c == '\n' ))
+    while ((c = getchar()) != EOF && isspace(c))
 	;
 
     if (!isalpha(c)) {
